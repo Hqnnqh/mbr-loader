@@ -2,6 +2,9 @@
 ; A simple boot sector program that prints a message to the screen using a BIOS routine.
 ;
 bits 16 ; 16-bit real mode
+[org 0x7c00] ; where BIOS should load bootloader code into memory
+
+%include "src/print.asm"
 
 ; put BIOS routine identifier in high half of ax and character to print in low half.
 

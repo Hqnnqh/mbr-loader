@@ -1,7 +1,5 @@
 ASM_SRC_DIR := src
 BUILD_DIR := build
-ASM_FILES := $(wildcard $(ASM_SRC_DIR)/*.asm)
-OBJ_FILES := $(patsubst $(ASM_SRC_DIR)/%.asm, $(BUILD_DIR)/%.o, $(ASM_FILES))
 OUTPUT := $(BUILD_DIR)/bootloader.bin
 
 NASM := nasm
@@ -12,11 +10,8 @@ $(BUILD_DIR):
 
 all: $(BUILD_DIR) $(OUTPUT)
 
-$(OUTPUT): $(OBJ_FILES)
-	$(NASM) $(NASM_FLAGS) -o $(OUTPUT) $(ASM_FILES)
-
-$(BUILD_DIR)/%.o: $(ASM_SRC_DIR)/%.asm
-	$(NASM) $(NASM_FLAGS) -o $@ $<
+$(OUTPUT): $(ASM_SRC_DIR)/boot_sector.asm
+	$(NASM) $(NASM_FLAGS) -o $(OUTPUT) $<
 
 clean:
 	rm -rf $(BUILD_DIR)
