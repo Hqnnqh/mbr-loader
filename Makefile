@@ -16,7 +16,7 @@ $(OUTPUT): $(ASM_SRC_DIR)/boot_sector.asm
 clean:
 	rm -rf $(BUILD_DIR)
 
-run: $(OUTPUT)
+run: all
 	qemu-system-x86_64 -drive format=raw,file=$(OUTPUT)
 
 .PHONY: all clean run

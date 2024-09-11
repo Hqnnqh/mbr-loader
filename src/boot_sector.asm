@@ -7,6 +7,9 @@ bits 16 ; 16-bit real mode
 mov bx, HELLO_MSG
 call print_string
 
+mov bx, 0x1fb6
+call print_hex
+
 jmp $ ; loop forever
 
 ; include
@@ -14,7 +17,7 @@ jmp $ ; loop forever
 
 ; data
 HELLO_MSG :
-db 'Hello, World!', 0 ; zero makes the string null-terminaed
+db 'Hello, World!', 0 ; zero makes the string null-terminated
 
 ; fill up sector binary
 times 510-($-$$) db 0 ; fill entire binary except for last 2 bytes with 0 (as padding)
