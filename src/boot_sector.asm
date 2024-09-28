@@ -28,7 +28,7 @@ call print_hex
 jmp $ ; loop forever
 
 ; include
-%include "src/print.asm"
+%include "src/print16.asm"
 %include "src/read_disk.asm"
 
 ; data
