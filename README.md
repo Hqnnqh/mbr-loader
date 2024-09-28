@@ -1,6 +1,6 @@
 # mbr-loader
 
-This project is a simple **legacy MBR BIOS bootloader**. It consists of a boot sector program written in assembly using NASM. The bootloader follows the legacy Master Boot Record (MBR) format and can be run using QEMU for testing.
+This project is a simple **legacy MBR BIOS bootloader**. It consists of a boot sector program written in assembly using NASM and a minimal kernel entry written in Rust. The bootloader follows the legacy Master Boot Record (MBR) format and can be run using QEMU for testing.
 
 ## Setup and Requirements
 
