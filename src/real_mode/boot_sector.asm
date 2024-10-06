@@ -28,8 +28,8 @@ call print_hex
 jmp $ ; loop forever
 
 ; include
-%include "src/print16.asm"
-%include "src/read_disk.asm"
+%include "src/real_mode/print16.asm"
+%include "src/real_mode/read_disk.asm"
 
 ; data
 BOOT_DRIVE: db 0
