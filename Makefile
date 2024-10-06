@@ -1,4 +1,4 @@
-ASM_SRC_DIR := src
+ASM_SRC_DIR := src/real_mode/
 BUILD_DIR := build
 OUTPUT := $(BUILD_DIR)/bootloader.bin
 DISK := $(BUILD_DIR)/hdd.img
@@ -13,7 +13,7 @@ $(BUILD_DIR):
 
 all: $(BUILD_DIR) $(OUTPUT)
 
-$(OUTPUT): $(ASM_SRC_DIR)/boot_sector.asm
+$(OUTPUT): $(ASM_SRC_DIR)boot_sector.asm
 	$(NASM) $(NASM_FLAGS) -o $(OUTPUT) $<
 
 clean:
